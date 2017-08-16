@@ -2,6 +2,7 @@ package com.spiritflightapps.capitalsflashcards
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
@@ -13,6 +14,7 @@ import com.google.android.gms.maps.model.MarkerOptions
 import org.jetbrains.anko.alert
 import org.jetbrains.anko.toast
 import org.jetbrains.anko.yesButton
+import java.util.*
 
 class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
@@ -45,12 +47,12 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
         // Add a marker in donna and move the camera
         val donna = LatLng(26.17, -98.05)
-        mMap.setMaxZoomPreference(4.0f)
+        mMap.setMaxZoomPreference(4.7f)
         mMap.moveCamera(CameraUpdateFactory.newLatLng(donna))
         mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(donna, 13f))
         val cameraPosition = CameraPosition.Builder()
                 .target(donna)      // Sets the center of the map to location user
-                .zoom(4.3f)                   // Sets the zoom;
+                .zoom(4.5f)                   // Sets the zoom;
                 .bearing(0f)                // Sets the orientation of the camera to north
                 .tilt(40f)                   // Sets the tilt of the camera to 30 degrees
                 .build()                   // Creates a CameraPosition from the builder
@@ -87,8 +89,26 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         // eg dont worry aout the zoom issue, it's like a little hint, these aren't it...
 
 
+        val cal = Calendar.getInstance();
+        val month = cal.get(Calendar.MONTH) + 1;
+        val year = cal.get(Calendar.YEAR)
+        val day = cal.get(Calendar.DAY_OF_MONTH)
+        Log.e("NJW", "$day / $month / $year" )
+
+        if (year == 2017 && month == 8 && (day == 17 || day == 16)) {
+            showDialog();
+        }
+
+
+    }
+
+    /**
+     * Temporary dialog
+     * TODO: remove before production release!!
+     */
+    fun showDialog() {
         alert("Happy Anniversary!  love you mucho!", "My lovely Carina!") {
-            yesButton { toast("You're the best!…") }
+            yesButton { toast("You're the best!") }
         }.show()
     }
 }
