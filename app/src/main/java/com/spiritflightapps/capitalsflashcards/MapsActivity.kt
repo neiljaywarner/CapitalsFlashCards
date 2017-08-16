@@ -10,6 +10,9 @@ import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.CameraPosition
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
+import org.jetbrains.anko.alert
+import org.jetbrains.anko.toast
+import org.jetbrains.anko.yesButton
 
 class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
@@ -61,6 +64,8 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         addMarkers()
         mMap.mapType = GoogleMap.MAP_TYPE_HYBRID
 
+
+
     }
 
     fun addMarkers() {
@@ -76,6 +81,14 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
         mMap.addMarker(MarkerOptions().position(LatLng(39.01,-95.85)).title("Topeka"))
 
+        //TODO: FIXME before release
+        // Also fix screenshots to have the rest of the capitals!!! and the zoom in the northeast somehow?
+        // NOTE: the list could be the harder quiz, the map could be the easier funner one!!!
+        // eg dont worry aout the zoom issue, it's like a little hint, these aren't it...
 
+
+        alert("Happy Anniversary!  love you mucho!", "My lovely Carina!") {
+            yesButton { toast("You're the best!…") }
+        }.show()
     }
 }
