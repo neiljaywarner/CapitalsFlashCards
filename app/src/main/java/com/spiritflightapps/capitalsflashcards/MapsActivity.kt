@@ -105,11 +105,12 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
         mMap.setOnInfoWindowClickListener {
             val city = it.tag as City
-            val link = "https://en.wikipedia.org/wiki/" + city.name.replace(" ", "_") + ",_" + city.state
+            val link = "https://en.wikipedia.org/wiki/" + city.name.replace(" ", "_") + ",_" + city.state.replace(" ", "_")
             // TODO: Kotlinify
             browse(link)
         }
 
+        // TOD: GIve social ability for teacher app, for teacher's to add info via firebase real time db :)
     }
 
     fun addCities(): ArrayList<City> {
@@ -153,20 +154,23 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         cities.add(City("Boston", "Massachusetts", LatLng(42.3142643,-71.1107105)))
         cities.add(City("Lansing", "Michigan", LatLng(42.7086601,-84.6296389)))
         cities.add(City("St Paul", "Minnesota", LatLng(44.939686,-93.1762647)))
+        cities.add(City("Jackson", "Mississippi", LatLng(32.310309,-90.2590991)))
+        cities.add(City("Jefferson City", "Missouri", LatLng(38.5711449,-92.2326164)))
+
+
+        //cities.add(City("Helena", "Montana", LatLng(3,-)))
+        //cities.add(City("Lincoln", "Hebraska", LatLng(3,-)))
+        //cities.add(City("Carson City", "Nevada", LatLng(3,-)))
+
+        cities.add(City("Concord", "New Hampshire", LatLng(43.23078,-71.6328168)))
+
         /*
-        cities.add(City("Jackson", "Mississippi", LatLng(3,-)))
-        cities.add(City("Jefferson City", "Missouri", LatLng(3,-)))
-
-
-        cities.add(City("Helena", "Montana", LatLng(3,-)))
-        cities.add(City("Lincoln", "Hebraska", LatLng(3,-)))
-        cities.add(City("Carson City", "Nevada", LatLng(3,-)))
-        cities.add(City("Concord", "New Hampshire", LatLng(3,-)))
         cities.add(City("Trenton", "New Jersey", LatLng(3,-)))
 
         cities.add(City("Santa Fe", "New Mexico", LatLng(3,-)))
-        cities.add(City("", "", LatLng(3,-)))
-        cities.add(City("", "", LatLng(3,-)))
+        cities.add(City("Albany", "New York", LatLng(3,-)))
+        cities.add(City("Raleigh", "North Carolina", LatLng(3,-)))
+
         cities.add(City("", "", LatLng(3,-)))
         cities.add(City("", "", LatLng(3,-)))
 
