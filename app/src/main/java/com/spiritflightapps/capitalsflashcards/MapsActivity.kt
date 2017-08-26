@@ -12,6 +12,7 @@ import com.google.android.gms.maps.model.CameraPosition
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
 import org.jetbrains.anko.alert
+import org.jetbrains.anko.browse
 import org.jetbrains.anko.toast
 import org.jetbrains.anko.yesButton
 import java.util.*
@@ -90,11 +91,24 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
         val cities = addCities()
         cities.forEach {
-            mMap.addMarker(MarkerOptions().position(it.latLong).title(it.name));
+            mMap.addMarker(MarkerOptions().position(it.latLong).title(it.name)).tag = it
         }
 
         //todo: see https://stackoverflow.com/questions/13904651/android-google-maps-v2-how-to-add-marker-with-multiline-snippet
         // make an easy way to show the state, etc.
+
+
+        // TODO: Links to open info in wikipedia when you tap on it
+        // https://en.wikipedia.org/wiki/Saint_Paul,_Minnesota
+       //  https://en.wikipedia.org/wiki/Montgomery,_Alabama
+
+
+        mMap.setOnInfoWindowClickListener {
+            val city = it.tag as City
+            val link = "https://en.wikipedia.org/wiki/" + city.name.replace(" ", "_") + ",_" + city.state
+            // TODO: Kotlinify
+            browse(link)
+        }
 
     }
 
@@ -109,47 +123,48 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         cities.add(City("Denver", "Colorado", LatLng(39.7642543, -104.9955383)))
         cities.add(City("Hartford", "Connecticut", LatLng(41.7656821, -72.7151922)))
         cities.add(City("Dover", "Delaware", LatLng(39.1563948, -75.5836314)))
+        cities.add(City("Tallahassee", "Florida", LatLng(39.1563948,-75.5836314)))
+        cities.add(City("Atlanta", "Georgia", LatLng(33.7676334,-84.5610314)))
 
 
         //NOTE: google's zoom levels in urls change when you put it into maps, perhaps i could use redirects
-// to figure out what level to zoom or something depending on small state...
-                /*
-        cities.add(City("Tallahassee", "Florida", LatLng(3,-)))
-        cities.add(City("Atlanta", "Georgia", LatLng(3,-)))
+// to figure out what level to zoom or something depending on small state... (the redirect is veyr quick)
+
 
 
         // thisk is the first time i wish i had isaiah my11 year old here who likes to sing a song about the 50nifty states
 
 
 
-        cities.add(City("Honolulu", "Hawaii", LatLng(3,-)))
-        cities.add(City("Boise City", "Idaho", LatLng(3,-)))
-        cities.add(City("Springfield", "Illinio", LatLng(3,-)))
-        cities.add(City("Indianapolis", "Indiana", LatLng(3,-)))
-        cities.add(City("Des Moines", "Iowa", LatLng(3,-)))
+        cities.add(City("Honolulu", "Hawaii", LatLng(21.3280192,-157.8692849)))
+        cities.add(City("Boise City", "Idaho", LatLng(43.6007846,-116.3041093)))
+        cities.add(City("Springfield", "Illinois", LatLng(39.7637528,-89.8112582)))
+        cities.add(City("Indianapolis", "Indiana", LatLng(39.7796999,-86.2731768)))
+        cities.add(City("Des Moines", "Iowa", LatLng(41.5666486,-93.6767274)))
 
 
         cities.add(City("Topeka", "Kansas", LatLng(39.01,-95.85)))
 
-        cities.add(City("Frankford", "Kentucy", LatLng(3,-)))
-        cities.add(City("Baton Rouge", "Louisiana", LatLng(3,-)))
-        cities.add(City("Augusta", "Maine", LatLng(3,-)))
-        cities.add(City("Annapolis", "Maryland", LatLng(3,-)))
+        cities.add(City("Frankford", "Kentucky", LatLng(38.1944403,-84.9017307)))
+        cities.add(City("Baton Rouge", "Louisiana", LatLng(30.4413988,-91.2518464)))
+        cities.add(City("Augusta", "Maine", LatLng(44.3334104,-69.8009034)))
+        cities.add(City("Annapolis", "Maryland", LatLng(38.9724637,-76.5397997)))
 
-        cities.add(City("Boston", "Massachusetts", LatLng(3,-)))
-        cities.add(City("Lansing", "Michigan", LatLng(3,-)))
-        cities.add(City("St Paul", "Minnesota", LatLng(3,-)))
+        cities.add(City("Boston", "Massachusetts", LatLng(42.3142643,-71.1107105)))
+        cities.add(City("Lansing", "Michigan", LatLng(42.7086601,-84.6296389)))
+        cities.add(City("St Paul", "Minnesota", LatLng(44.939686,-93.1762647)))
+        /*
         cities.add(City("Jackson", "Mississippi", LatLng(3,-)))
         cities.add(City("Jefferson City", "Missouri", LatLng(3,-)))
 
 
-        cities.add(City("", "Montana", LatLng(3,-)))
-        cities.add(City("", "Hebraska", LatLng(3,-)))
-        cities.add(City("", "Nevada", LatLng(3,-)))
-        cities.add(City("", "New Hampshire", LatLng(3,-)))
-        cities.add(City("", "New Jersey", LatLng(3,-)))
+        cities.add(City("Helena", "Montana", LatLng(3,-)))
+        cities.add(City("Lincoln", "Hebraska", LatLng(3,-)))
+        cities.add(City("Carson City", "Nevada", LatLng(3,-)))
+        cities.add(City("Concord", "New Hampshire", LatLng(3,-)))
+        cities.add(City("Trenton", "New Jersey", LatLng(3,-)))
 
-        cities.add(City("", "", LatLng(3,-)))
+        cities.add(City("Santa Fe", "New Mexico", LatLng(3,-)))
         cities.add(City("", "", LatLng(3,-)))
         cities.add(City("", "", LatLng(3,-)))
         cities.add(City("", "", LatLng(3,-)))
