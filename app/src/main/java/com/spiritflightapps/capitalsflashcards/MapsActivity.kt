@@ -145,7 +145,6 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
 
         cities.add(City("Topeka", "Kansas", LatLng(39.01,-95.85)))
-
         cities.add(City("Frankford", "Kentucky", LatLng(38.1944403,-84.9017307)))
         cities.add(City("Baton Rouge", "Louisiana", LatLng(30.4413988,-91.2518464)))
         cities.add(City("Augusta", "Maine", LatLng(44.3334104,-69.8009034)))
@@ -158,39 +157,35 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         cities.add(City("Jefferson City", "Missouri", LatLng(38.5711449,-92.2326164)))
 
 
-        //cities.add(City("Helena", "Montana", LatLng(3,-)))
-        //cities.add(City("Lincoln", "Hebraska", LatLng(3,-)))
-        //cities.add(City("Carson City", "Nevada", LatLng(3,-)))
-
+        cities.add(City("Helena", "Montana", LatLng(43.23078,-71.6328168)))
+        cities.add(City("Lincoln", "Nebraska", LatLng(40.8005877,-96.7609397)))
+        cities.add(City("Carson City", "Nevada", LatLng(39.1677492,-119.9167539)))
         cities.add(City("Concord", "New Hampshire", LatLng(43.23078,-71.6328168)))
+        cities.add(City("Trenton", "New Jersey", LatLng(40.2160482,-74.8093107)))
 
-        /*
-        cities.add(City("Trenton", "New Jersey", LatLng(3,-)))
+        cities.add(City("Santa Fe", "New Mexico", LatLng(35.682473,-106.053247)))
+        cities.add(City("Albany", "New York", LatLng(42.668063,-73.8808924)))
+        cities.add(City("Raleigh", "North Carolina", LatLng(35.8436863,-78.7854832)))
+        cities.add(City("Bismarck", "North Dakota", LatLng(46.8090545,-100.8372658)))
+        cities.add(City("Columbus", "Ohio", LatLng(39.9828667,-83.1312558)))
 
-        cities.add(City("Santa Fe", "New Mexico", LatLng(3,-)))
-        cities.add(City("Albany", "New York", LatLng(3,-)))
-        cities.add(City("Raleigh", "North Carolina", LatLng(3,-)))
+        cities.add(City("Oklahoma City", "Oklahoma", LatLng(35.4825666,-97.6196248)))
+        cities.add(City("Salem", "Oregon", LatLng(44.9329699,-123.0984187)))
+        cities.add(City("Harrisburg", "Pennsylvania", LatLng(40.2821392,-76.9155307)))
+        cities.add(City("Providence", "Rhode Island", LatLng(41.8169872,-71.4562857)))
+        cities.add(City("Columbia", "South Carolina", LatLng(34.0374291,-81.0779924)))
 
-        cities.add(City("", "", LatLng(3,-)))
-        cities.add(City("", "", LatLng(3,-)))
+        cities.add(City("Pierre", "South Dakota", LatLng(44.3707626,-100.3556437)))
+        cities.add(City("Nashville", "Tennessee", LatLng(3,-)))
+        cities.add(City("Austin", "Texas", LatLng(3,-)))
+        cities.add(City("Salt Lake City", "Utah", LatLng(3,-)))
+        cities.add(City("Montpelier", "Vermont", LatLng(3,-)))
 
-        cities.add(City("", "", LatLng(3,-)))
-        cities.add(City("", "", LatLng(3,-)))
-        cities.add(City("", "", LatLng(3,-)))
-        cities.add(City("", "", LatLng(3,-)))
-        cities.add(City("", "", LatLng(3,-)))
-
-        cities.add(City("", "", LatLng(3,-)))
-        cities.add(City("", "", LatLng(3,-)))
-        cities.add(City("", "", LatLng(3,-)))
-        cities.add(City("", "", LatLng(3,-)))
-        cities.add(City("", "", LatLng(3,-)))
-
-        cities.add(City("", "", LatLng(3,-)))
-        cities.add(City("", "", LatLng(3,-)))
-        cities.add(City("", "", LatLng(3,-)))
-        cities.add(City("", "", LatLng(3,-)))
-        cities.add(City("", "", LatLng(3,-)))
+        cities.add(City("Richmond", "Virginia", LatLng(3,-)))
+        cities.add(City("Olympia", "Washington", LatLng(3,-)))
+        cities.add(City("Charleston", "", LatLng(3,-)))
+        cities.add(City("Madison", "", LatLng(3,-)))
+        cities.add(City("Cheyenne", "Wyoming", LatLng(3,-)))
 */
 
 
