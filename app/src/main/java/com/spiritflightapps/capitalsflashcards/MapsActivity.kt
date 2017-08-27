@@ -53,7 +53,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(donna, 13f))
         val cameraPosition = CameraPosition.Builder()
                 .target(donna)      // Sets the center of the map to location user
-                .zoom(4.8f)                   // Sets the zoom;
+                .zoom(4.7f)                   // Sets the zoom;
                 .bearing(0f)                // Sets the orientation of the camera to north
                 .tilt(40f)                   // Sets the tilt of the camera to 30 degrees
                 .build()                   // Creates a CameraPosition from the builder
@@ -124,7 +124,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         cities.add(City("Denver", "Colorado", LatLng(39.7642543, -104.9955383)))
         cities.add(City("Hartford", "Connecticut", LatLng(41.7656821, -72.7151922)))
         cities.add(City("Dover", "Delaware", LatLng(39.1563948, -75.5836314)))
-        cities.add(City("Tallahassee", "Florida", LatLng(39.1563948,-75.5836314)))
+        cities.add(City("Tallahassee", "Florida", LatLng(30.4671207,-84.3270675)))
         cities.add(City("Atlanta", "Georgia", LatLng(33.7676334,-84.5610314)))
 
 
@@ -176,17 +176,17 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         cities.add(City("Columbia", "South Carolina", LatLng(34.0374291,-81.0779924)))
 
         cities.add(City("Pierre", "South Dakota", LatLng(44.3707626,-100.3556437)))
-        cities.add(City("Nashville", "Tennessee", LatLng(3,-)))
-        cities.add(City("Austin", "Texas", LatLng(3,-)))
-        cities.add(City("Salt Lake City", "Utah", LatLng(3,-)))
-        cities.add(City("Montpelier", "Vermont", LatLng(3,-)))
+        cities.add(City("Nashville", "Tennessee", LatLng(36.1865585,-86.9256723)))
+        cities.add(City("Austin", "Texas", LatLng(30.3076859,-97.8938288)))
+        cities.add(City("Salt Lake City", "Utah", LatLng(40.7765867,-111.9906964)))
+        cities.add(City("Montpelier", "Vermont", LatLng(44.2741865,-72.6038251)))
 
-        cities.add(City("Richmond", "Virginia", LatLng(3,-)))
-        cities.add(City("Olympia", "Washington", LatLng(3,-)))
-        cities.add(City("Charleston", "", LatLng(3,-)))
-        cities.add(City("Madison", "", LatLng(3,-)))
-        cities.add(City("Cheyenne", "Wyoming", LatLng(3,-)))
-*/
+        cities.add(City("Richmond", "Virginia", LatLng(37.5246402,-77.5634729)))
+        cities.add(City("Olympia", "Washington", LatLng(47.0393281,-122.9289738)))
+        cities.add(City("Charleston", "West Virginia", LatLng(38.343428,-81.7137549)))
+        cities.add(City("Madison", "Wisconsin", LatLng(43.084972,-89.4766317)))
+        cities.add(City("Cheyenne", "Wyoming", LatLng(41.1475272,-104.8025098)))
+
 
 
 
