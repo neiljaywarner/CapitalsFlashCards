@@ -46,13 +46,13 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         //
         mMap = googleMap
 
-        // Add a marker in donna and move the camera
-        val donna = LatLng(26.17, -98.05)
-        mMap.setMaxZoomPreference(5.1f)
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(donna))
-        mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(donna, 13f))
+        // center on okc for now
+        val okc = LatLng(35.4825666,-97.6196248)
+        //mMap.setMaxZoomPreference(6.1f)
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(okc))
+        mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(okc, 13f))
         val cameraPosition = CameraPosition.Builder()
-                .target(donna)      // Sets the center of the map to location user
+                .target(okc)      // Sets the center of the map to location user
                 .zoom(4.7f)                   // Sets the zoom;
                 .bearing(0f)                // Sets the orientation of the camera to north
                 .tilt(40f)                   // Sets the tilt of the camera to 30 degrees
@@ -157,7 +157,10 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         cities.add(City("Jefferson City", "Missouri", LatLng(38.5711449,-92.2326164)))
 
 
-        cities.add(City("Helena", "Montana", LatLng(43.23078,-71.6328168)))
+        // very odd maps.google.com url is wrong, weird.
+        //cities.add(City("Helena", "Montana", LatLng(46.5933526,-116.4982019)))
+        cities.add(City("Helena", "Montana", LatLng(46.5884,-112.0245)))
+
         cities.add(City("Lincoln", "Nebraska", LatLng(40.8005877,-96.7609397)))
         cities.add(City("Carson City", "Nevada", LatLng(39.1677492,-119.9167539)))
         cities.add(City("Concord", "New Hampshire", LatLng(43.23078,-71.6328168)))
